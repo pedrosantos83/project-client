@@ -16,21 +16,23 @@ class ListDestinies extends React.Component {
             <ul>
                 {this.state.destinies.map((destiny, index) => {
                     return <li key={index}>
-                       <div class="id">
-                       <NavLink to={`/destiny/${destiny._id}`}>{destiny.city}</NavLink>
+                        <div class="id">
+                            <ul>
+                                <NavLink to={`/destiny/${destiny._id}`}>{destiny.city}</NavLink>
                        &nbsp;
-                       <h2>{destiny.user.username}</h2>
+                       <li>traveller:{destiny.user.username}</li>
                        &nbsp;
-                       <h5>{destiny.date}</h5>
+                       <li>destiny:{destiny.date}</li>
                        &nbsp;
-                       <h4>{destiny.duration}</h4>
+                       <li>duration:{destiny.duration}days</li>
                        &nbsp;
-                       <NavLink to={`/destiny/${destiny._id}/edit`}><button type="button">Edit</button></NavLink>
-                       </div>
-                        </li>
+                       </ul>
+                            <NavLink to={`/destiny/${destiny._id}/edit`}><button type="button">Edit</button></NavLink>
+                        </div>
+                    </li>
                 })};
             </ul>
         )
     }
- }
+}
 export default ListDestinies;

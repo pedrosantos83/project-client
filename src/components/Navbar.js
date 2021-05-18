@@ -26,15 +26,15 @@ function Navbar({loggedInUser, setCurrentUser}) {
           Add Destiny
         </NavLink>
       </li>
+      <li>
+        <NavLink activeStyle={{ color: "red" }} exact to="/search">
+          Search Destiny
+        </NavLink>
+      </li>
     </ul>
     </>
   ) : (
     <ul>
-    <li>
-      <NavLink activeStyle={{ color: "red" }} exact to="/destiny">
-        Destiny
-      </NavLink>
-    </li>
     <li>
         <NavLink activeStyle={{ color: "red" }} exact to="/signup">
           Signup

@@ -1,7 +1,15 @@
+body,html{
+ height: 100%;
+ 
+}
 .App {
-  background-color: aquamarine;
+  /* background-color: rgb(139, 225, 251); */
+  background-image:url("../src/images/pin.jpg") ;
+  background-size: cover;
+  height:100%;
   text-align: center;
 }
+
 
 .App-logo {
   height: 40vmin;
@@ -42,4 +50,16 @@
   border: 2px solid black;
   margin: 20px;
   padding: 20px;
+  background-color:white;
+  opacity: 0.6;
+  border-radius: 25px;
 } 
+
+.Signup_box{
+  width: 450px;
+  margin:auto;
+  padding: 20px;
+  background-color:white;
+  border-radius: 25px;
+ 
+}

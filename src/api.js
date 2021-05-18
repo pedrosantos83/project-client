@@ -41,3 +41,10 @@ export const logout = () => {
   export const loggedin = () => {
     return axios.get(`${baseUrl}/loggedin`, {withCredentials: true});
   }
+
+  export const searchDestiny = () =>{
+      return axios.post(`${baseUrl}/search`); 
+  }
+  export const allCities = () =>{
+      return axios.get(`${baseUrl}/allcities`); 
+  }
