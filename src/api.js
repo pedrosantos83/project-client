@@ -27,8 +27,8 @@ export const uploadFile = (uploadData) => {
 
 /* Authentication Routes*/
 
-export const signup =(username, email, password) =>{
-    return axios.post(`${baseUrl}/signup`,{username,email,password});
+export const signup =(newUser) =>{
+    return axios.post(`${baseUrl}/signup`,newUser);
 };
 
 export const login = (username, password) => {

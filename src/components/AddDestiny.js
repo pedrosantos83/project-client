@@ -19,7 +19,7 @@ class AddDestiny extends React.Component {
   };
   handleFormSubmit = async (event) => {
     event.preventDefault();
-    const { date, city, description,duration, places, imageUrl } = this.state;
+    const { date, city, description, duration, places, imageUrl } = this.state;
     const uploadData = new FormData();
     uploadData.append("file", imageUrl);
     //1. Upload the image to our api
@@ -30,14 +30,14 @@ class AddDestiny extends React.Component {
       city,
       description,
       duration,
-      places, 
+      places,
       imageUrl: response.data.fileUrl,
     };
     await addDestiny(newDestiny);
     this.props.history.push("/destiny");
   };
   render() {
-    const {  date, city, description,duration, places} = this.state;
+    const { date, city, description, duration, places } = this.state;
     return (
       <form onSubmit={this.handleFormSubmit} encType="multipart/form-data">
         <label>Date</label>
@@ -47,21 +47,21 @@ class AddDestiny extends React.Component {
           onChange={this.handleChange}
           value={date}
         />
-          <label>City</label>
+        <label>City</label>
         <input
           type="text"
           name="city"
           onChange={this.handleChange}
           value={city}
         />
-          <label>Description</label>
+        <label>Description</label>
         <input
           type="text"
           name="description"
           onChange={this.handleChange}
           value={description}
         />
-          <label>Duration</label>
+        <label>Duration</label>
         <input
           type="text"
           name="duration"

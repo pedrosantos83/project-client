@@ -18,11 +18,13 @@ class ListDestinies extends React.Component {
                     return <li key={index}>
                         <div class="id">
                             <ul>
+                       <li><img src={destiny.user.imageUrl}/></li>
+                       &nbsp;
+                       <li>{destiny.user.username}</li>
+                       &nbsp;
                                 <NavLink to={`/destiny/${destiny._id}`}>{destiny.city}</NavLink>
                        &nbsp;
-                       <li>traveller:{destiny.user.username}</li>
-                       &nbsp;
-                       <li>destiny:{destiny.date}</li>
+                       <li>date:{destiny.date}</li>
                        &nbsp;
                        <li>duration:{destiny.duration}days</li>
                        &nbsp;

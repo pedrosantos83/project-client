@@ -12,17 +12,7 @@ import { loggedin } from "./api";
 import SearchDestiny from "./components/SearchDestiny";
 import { Button, ButtonGroup } from 'reactstrap';
 
-// const Example = (props) => {
-//   return (
-//     <ButtonGroup>
-//       <Button>Left</Button>
-//       <Button>Middle</Button>
-//       <Button>Right</Button>
-//     </ButtonGroup>
-//   );
-// }
 
-// export default Example;
 
 
 class App extends React.Component {
@@ -47,33 +37,29 @@ class App extends React.Component {
   render() {
     const { loggedInUser } = this.state;
     return (
-      <div className="App">
-        🛴🚲🚙🚗
-        <h1>Traveller´s Log</h1>
-
-        
-<img src ="../images/Logo2.png" alt="travelerlogo"/>
-   
-  
-
-        <Navbar loggedInUser={loggedInUser} setCurrentUser={this.setCurrentUser} />
-        <Switch>
-          <Route exact path={"/search"} component={SearchDestiny} />
-          <Route exact path={"/destiny"} component={ListDestiny} />
-          <Route exact path="/destiny/add" component={AddDestiny} />
-          <Route exact path="/destiny/:id" component={DestinyDetails} />
-          <Route exact path="/destiny/:id/edit" component={EditDestiny} />
-          <Route exact path="/signup" component={Signup} />
-          <Route
-            exact
-            path="/login"
-            render={(props) => {
-              return <Login {...props} setCurrentUser={this.setCurrentUser} />;
-            }}
-          />
-        </Switch>
+      <body className="App">
+        <img src="/images/Logo1.png" alt="travelerlogo" width="600" />
+        <div>
+          <h1>Traveller´s Log</h1>
+          <Navbar loggedInUser={loggedInUser} setCurrentUser={this.setCurrentUser} />
+          <Switch>
+            <Route exact path={"/search"} component={SearchDestiny} />
+            <Route exact path={"/destiny"} component={ListDestiny} />
+            <Route exact path="/destiny/add" component={AddDestiny} />
+            <Route exact path="/destiny/:id" component={DestinyDetails} />
+            <Route exact path="/destiny/:id/edit" component={EditDestiny} />
+            <Route exact path="/signup" component={Signup} />
+            <Route
+              exact
+              path="/login"
+              render={(props) => {
+                return <Login {...props} setCurrentUser={this.setCurrentUser} />;
+              }}
+            />
+          </Switch>
       🚕🚕
       </div>
+      </body>
     );
   }
 }

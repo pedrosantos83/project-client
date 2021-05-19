@@ -1,51 +1,44 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { logout } from "../api";
+import { Col, Row, Button, Form, FormGroup, Label, Input } from "reactstrap";
 
-function Navbar({loggedInUser, setCurrentUser}) {
-    const logoutUser = async () => {
-        await logout();
-        setCurrentUser(null);
-    };
+function Navbar({ loggedInUser, setCurrentUser }) {
+  const logoutUser = async () => {
+    await logout();
+    setCurrentUser(null);
+  };
   return loggedInUser ? (
-   <>
-   <p>Welcome {loggedInUser.username}</p>
-   <ul>
-   <li>
-        <NavLink to="/">
-         <button onClick ={logoutUser}>Logout</button>
-        </NavLink>
-      </li>
-      <li>
-        <NavLink activeStyle={{ color: "red" }} exact to="/destiny">
-          Destiny
-        </NavLink>
-      </li>
-      <li>
-        <NavLink activeStyle={{ color: "red" }} exact to="/destiny/add">
-          Add Destiny
-        </NavLink>
-      </li>
-      <li>
-        <NavLink activeStyle={{ color: "red" }} exact to="/search">
-          Search Destiny
-        </NavLink>
-      </li>
-    </ul>
+    <>
+      <p>Welcome {loggedInUser.username}</p>
+      
+          <NavLink to="/">
+          <Button color="danger"onClick={logoutUser}>Logout</Button>
+          </NavLink>
+          &nbsp;
+          <NavLink activeStyle={{ color: "red" }} exact to="/destiny">
+          <Button color="primary"> List</Button>
+          </NavLink>
+          &nbsp;
+          <NavLink activeStyle={{ color: "red" }} exact to="/destiny/add">
+            <Button color="success">Add Destiny</Button>
+          </NavLink>
+          &nbsp;
+          <NavLink activeStyle={{ color: "red" }} exact to="/search">
+          <Button color="success"> Search Destiny</Button>
+          </NavLink>
+       
     </>
   ) : (
-    <ul>
-    <li>
-        <NavLink activeStyle={{ color: "red" }} exact to="/signup">
-          Signup
-        </NavLink>
-      </li>
-      <li>
-        <NavLink activeStyle={{ color: "red" }} exact to="/login">
-          Login
-        </NavLink>
-      </li>
-  </ul>
-  )
+    <div>
+      <NavLink activeStyle={{ color: "red" }} exact to="/signup">
+        <Button color="danger"> Signup</Button>
+      </NavLink>
+      &nbsp;
+      <NavLink activeStyle={{ color: "red" }} exact to="/login">
+        <Button color="danger"> Login</Button>
+      </NavLink>
+    </div>
+  );
 }
 export default Navbar;
