@@ -44,7 +44,9 @@ body,html{
   }
 }
 .id{
-  display: flex;
+  display: flex; 
+  width:auto;
+  height:auto;
   border: 2px solid black;
   margin: 20px;
   padding: 20px;
@@ -60,4 +62,13 @@ body,html{
   background-color:white;
   border-radius: 25px;
  
+}
+
+.post{
+  text-decoration: none;
+  border-radius: 50%;
+}
+
+.Signup_box img{
+  border-radius: 50%;
 }

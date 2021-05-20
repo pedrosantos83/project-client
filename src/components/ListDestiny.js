@@ -13,12 +13,12 @@ class ListDestinies extends React.Component {
     }
     render() {
         return (
-            <ul>
+            <ul class="post">
                 {this.state.destinies.map((destiny, index) => {
                     return <li key={index}>
                         <div class="id">
-                            <ul>
-                       <li><img src={destiny.user.imageUrl}/></li>
+                           <ul>
+                       <li class="photo"><img  src={destiny.user.imageUrl} width="200" height="300"/></li>
                        &nbsp;
                        <li>{destiny.user.username}</li>
                        &nbsp;
@@ -28,8 +28,10 @@ class ListDestinies extends React.Component {
                        &nbsp;
                        <li>duration:{destiny.duration}days</li>
                        &nbsp;
+                      
                        </ul>
-                            <NavLink to={`/destiny/${destiny._id}/edit`}><button type="button">Edit</button></NavLink>
+                       {this.props.loggedInUser._id === destiny.user._id && <NavLink to={`/destiny/${destiny._id}/edit`}><button type="button">Edit</button></NavLink>}
+                            
                         </div>
                     </li>
                 })};

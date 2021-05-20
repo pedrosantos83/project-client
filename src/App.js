@@ -44,7 +44,11 @@ class App extends React.Component {
           <Navbar loggedInUser={loggedInUser} setCurrentUser={this.setCurrentUser} />
           <Switch>
             <Route exact path={"/search"} component={SearchDestiny} />
-            <Route exact path={"/destiny"} component={ListDestiny} />
+            <Route exact path={"/destiny"} render={(props) => {
+                return <ListDestiny {...props} loggedInUser={loggedInUser} />;
+              }}
+            />
+             {/* <PrivateRoute exact path="/projects/add" component = {AddDestiny}/> */}
             <Route exact path="/destiny/add" component={AddDestiny} />
             <Route exact path="/destiny/:id" component={DestinyDetails} />
             <Route exact path="/destiny/:id/edit" component={EditDestiny} />

@@ -15,7 +15,7 @@ export const deleteDestiny =(id) => {
 
 
 export const addDestiny = (project) => {
-    return axios.post(`${baseUrl}/destiny`, project,{withCredentials: true} );
+    return axios.post(`${baseUrl}/destiny`, project, {withCredentials: true} );
 };
 export const updateDestiny = (updatedDestiny) => {
     return axios.put(`${baseUrl}/destiny/${updatedDestiny._id}`, updatedDestiny);
