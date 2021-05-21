@@ -10,6 +10,7 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 import { loggedin } from "./api";
 import SearchDestiny from "./components/SearchDestiny";
+import Places from "./components/Places";
 import { Button, ButtonGroup } from 'reactstrap';
 
 
@@ -38,9 +39,9 @@ class App extends React.Component {
     const { loggedInUser } = this.state;
     return (
       <body className="App">
-        <img src="/images/Logo1.png" alt="travelerlogo" width="600" />
+        <img src="/images/Logo1.png" alt="travelerlogo" width="500" />
         <div>
-          <h1>Traveller´s Log</h1>
+          <h1 class="title">Traveller´s Log</h1>
           <Navbar loggedInUser={loggedInUser} setCurrentUser={this.setCurrentUser} />
           <Switch>
             <Route exact path={"/search"} component={SearchDestiny} />
@@ -53,6 +54,7 @@ class App extends React.Component {
             <Route exact path="/destiny/:id" component={DestinyDetails} />
             <Route exact path="/destiny/:id/edit" component={EditDestiny} />
             <Route exact path="/signup" component={Signup} />
+            <Route exact path="/places/:place" component={Places} />
             <Route
               exact
               path="/login"

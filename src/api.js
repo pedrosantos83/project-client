@@ -12,6 +12,9 @@ export const getDestiny = (id) => {
 export const deleteDestiny =(id) => {
     return axios.delete(`${baseUrl}/destiny/${id}`);
 }
+export const getPlaces =(place) => {
+    return axios.get(`${baseUrl}/places/${place}`);
+}
 
 
 export const addDestiny = (project) => {

@@ -1,6 +1,7 @@
 import React from "react";
 import { allCities } from "../api";
 import DestinyDetails from "./DestinyDetails";
+import {NavLink} from 'react-router-dom'
 
 class SearchDestiny extends React.Component {
   state = {
@@ -21,7 +22,7 @@ class SearchDestiny extends React.Component {
     this.setState({
       searchKeyword: event.target.value,
       filteredCities: this.state.cities.filter((place) => {
-        return place.city
+        return place
           .toLowerCase()
           .includes(event.target.value.toLowerCase());
       }),
@@ -29,12 +30,15 @@ class SearchDestiny extends React.Component {
   };
   render() {
     return (
-      <div className="App">
+      <div>
+<div class="space"></div>
+      <div class="searchdest">
         Search: <input onKeyDown={this.handleSearch} />
         {this.state.filteredCities &&
           this.state.filteredCities.map((place) => {
-            return <p>{place.city}</p>;
+            return <NavLink to={`/places/${place}`}> <p>{place}</p></NavLink>;
           })}
+      </div>
       </div>
     );
   }

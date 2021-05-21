@@ -46,7 +46,7 @@ class Login extends React.Component {
             />
           </FormGroup>
           <FormGroup>
-            <Button color="danger">Login</Button>
+            <Button color="danger">Ok!</Button>
           </FormGroup>
 
           <FormGroup>

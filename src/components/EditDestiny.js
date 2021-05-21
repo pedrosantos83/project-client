@@ -36,44 +36,50 @@ class EditDestiny extends React.Component {
   render() {
     const {  date, city, description, duration, places} = this.state;
     return (
-      <form onSubmit={this.handleFormSubmit}>
-        <label>Date</label>
+     
+      <div>
+        <div class="space"></div>
+        <div class="editdest">
+        <form onSubmit={this.handleFormSubmit}>
+        <label>&nbsp;&nbsp;Date:</label>
         <input
           type="text"
           name="date"
           onChange={this.handleChange}
           value={date}
         />
-          <label>City</label>
+          <label>&nbsp;&nbsp;City</label>
         <input
           type="text"
           name="city"
           onChange={this.handleChange}
           value={city}
         />
-          <label>Description</label>
+          <label>&nbsp;&nbsp;Description</label>
         <input
           type="text"
           name="description"
           onChange={this.handleChange}
           value={description}
         />
-          <label>Duration</label>
+          <label>&nbsp;&nbsp;Duration</label>
         <input
           type="text"
           name="duration"
           onChange={this.handleChange}
           value={duration}
         />
-        <label>Places</label>
+        <label>&nbsp;&nbsp;Places</label>
         <input
           type="text"
           name="places"
           onChange={this.handleChange}
           value={places}
-        />
-        <button type="submit">Update</button>
+        />&nbsp;&nbsp;
+        <button type="submit">&nbsp;Update&nbsp;</button>
       </form>
+      </div>
+      </div>
     );
   }
 }

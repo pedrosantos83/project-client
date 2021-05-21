@@ -10,8 +10,9 @@ function Navbar({ loggedInUser, setCurrentUser }) {
   };
   return loggedInUser ? (
     <>
-      <p>Welcome {loggedInUser.username}</p>
-      
+    <div class="welcome">
+      <p >Welcome {loggedInUser.username}</p></div>
+      <div class="button-up">
           <NavLink to="/">
           <Button color="danger"onClick={logoutUser}>Logout</Button>
           </NavLink>
@@ -27,10 +28,10 @@ function Navbar({ loggedInUser, setCurrentUser }) {
           <NavLink activeStyle={{ color: "red" }} exact to="/search">
           <Button color="success"> Search Destiny</Button>
           </NavLink>
-       
+       </div>
     </>
   ) : (
-    <div>
+    <div class="button-botom">
       <NavLink activeStyle={{ color: "red" }} exact to="/signup">
         <Button color="danger"> Signup</Button>
       </NavLink>

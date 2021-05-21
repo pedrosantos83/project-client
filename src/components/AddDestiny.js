@@ -39,46 +39,50 @@ class AddDestiny extends React.Component {
   render() {
     const { date, city, description, duration, places } = this.state;
     return (
-      <form onSubmit={this.handleFormSubmit} encType="multipart/form-data">
-        <label>Date</label>
+      <div>
+        <div class="space"></div>
+        <div class="editdest">
+        <form onSubmit={this.handleFormSubmit} encType="multipart/form-data">
+        <label>&nbsp;&nbsp;Date:</label>
         <input
           type="text"
           name="date"
           onChange={this.handleChange}
           value={date}
         />
-        <label>City</label>
+        <label>&nbsp;&nbsp;City:</label>
         <input
           type="text"
           name="city"
           onChange={this.handleChange}
           value={city}
         />
-        <label>Description</label>
+        <label>&nbsp;&nbsp;Description:</label>
         <input
           type="text"
           name="description"
           onChange={this.handleChange}
           value={description}
         />
-        <label>Duration</label>
+        <label>&nbsp;&nbsp;Duration:</label>
         <input
           type="text"
           name="duration"
           onChange={this.handleChange}
           value={duration}
         />
-        <label>Places</label>
+        <label>&nbsp;&nbsp;Places:</label>
         <input
           type="text"
           name="places"
           onChange={this.handleChange}
           value={places}
-        />
-        <label>Image</label>
+        /><p></p>
+        <label>Image:</label>
         <input type="file" onChange={this.handleFileChange} />
         <button type="submit">Create</button>
-      </form>
+      </form></div>
+      </div>
     );
   }
 }
